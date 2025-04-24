@@ -1,0 +1,29 @@
+---
+import SocialIcons from '../SocialIcons.astro';
+import Title from '../atoms/Title.astro';
+import "./about.css"
+
+
+---
+
+<section id="about" class="about">
+	<div class="about__container">
+		<img
+			class="about__img"
+			src="/img/profile.jpg"
+			alt="Foto de perfil de Jhon Doe"
+		/>
+
+		<div class="about__content">
+			<Title margin="1rem" contenido="Sobre mí" />
+			<p class="about__text">
+				Soy técnico en administración de sistemas con especialización en ciberseguridad. Me apasiona la tecnología y 
+				he enfocado mi desarrollo profesional en el aprendizaje autodidacta, trabajando en proyectos prácticos como 
+				retos CTF, entornos virtualizados y análisis de vulnerabilidades. Busco seguir creciendo en el ámbito de la ciberseguridad, 
+				combinando conocimientos técnicos con una visión estratégica orientada a resolver problemas reales.
+			</p>
+			<SocialIcons width="25" height="25"/>
+		</div>
+	</div>
+
+</section>

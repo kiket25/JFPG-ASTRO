@@ -1,0 +1,35 @@
+---
+import TerminalIcon from '../../atoms/terminal-icon/TerminalIcon.astro';
+import Terminal from '../terminal/Terminal.astro';
+import './skills-on-terminal.css';
+---
+
+<Terminal nombre="jfpg">
+	<div class="terminal__skills">
+		<h2>Mis habilidades</h2>
+		<div class="terminal__skills__container">
+			<TerminalIcon
+				src="/assets/nessus.svg"
+				color="#7738ff"
+				name="Nessus"
+			/>
+			<TerminalIcon
+				src="/assets/splunk.svg"
+				color="#006400"
+				name="Splunk"
+			/>
+			<TerminalIcon
+				src="/assets/metasploit.png"
+				color="#00D1FF"
+				name="Metasploit"
+			/>
+			<TerminalIcon src="/assets/python.svg" color="#F3CBC2" name="Python" />
+			<TerminalIcon src="/assets/burp.svg" color="#00A3FF" name="Burp Suite" />
+			<TerminalIcon
+				src="/assets/nmap.svg"
+				color="#3F75FF"
+				name="Nmap"
+			/>
+		</div>
+	</div>
+</Terminal>
