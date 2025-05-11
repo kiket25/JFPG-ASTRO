@@ -1,3 +1,9 @@
+---
+title: "Ciberguard - Dockerlabs CTF WRITEUP"
+description: "CyberGuard es una máquina centrada en la escalada de privilegios mediante cronjobs inseguros, abuso de sudo y enlaces simbólicos."
+pubDate: 2025-05-11
+heroImage: "/img/ciberguard.png"
+---
 
 ### Primero arracamos el contedor.
 
