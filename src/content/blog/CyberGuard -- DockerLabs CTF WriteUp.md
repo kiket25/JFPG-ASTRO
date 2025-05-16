@@ -12,13 +12,13 @@ heroImage: "/img/ciberguard.png"
 ## 🔎 Enumeración
 
 Comenzamos analizando la máquina con **nmap** para descubrir puertos abiertos y servicios activos.
-<br>
+
 ![Nmap Scan](/img/cyberguard/cg-2.png)
-<br>
+
 Se observan dos puertos:
-<br>
+
 22/tcp SSH 80/tcp HTTP
-<br>
+
 Accedemos a la página web en el puerto 80 y encontramos una pagina web la cual parece un sitio empresarial, con un apartado sobre nosotros, formulario de contacto y login. Asi que nos centraremos en intentar acceder.
 
 ![visualizar la web](/img/cyberguard/cg-3.png)
