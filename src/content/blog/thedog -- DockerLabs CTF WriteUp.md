@@ -49,9 +49,9 @@ Finished
 
 No encontramos nada asi que revisamos en la web, el codigo fuento o algo
 
-![[Pasted image 20250607103650.png]]
+![Web](/img/thedog/dog-2.png)
 
-![[Pasted image 20250607095240.png]]
+![Code](/img/thedog/dog-3.png)
 
 Es una simple web hecha con html y css y bootstrap la cual muestra información acerca del comando ping, y viendo el codigo fuente podemos ver algo oculto en la etiqueta data-note la cual esta dentro del div id container py-5, y dice que provemos a hacer fuzzing pero usando para ver archivos html.
 
