@@ -82,11 +82,11 @@ Finished
 
 Aquí podemos ver que encontró el archivo html.html, lo cual iremos a inspeccionar ahora mismo.
 
-![[Pasted image 20250607104534.png]]
+![Page2](/img/thedog/dog-4.png)
 
 De acuerdo esto nos puede dar una pista de un posible usuario. llamado punky, el cual dice que le gusta experimentar con ping. Pero recordamos que en esta maquina solo tenemos el puerto 80 abierto con lo cual hay que ver la forma de intentar conseguir explotar alguna vulnerabilidad ya que esta versión de apache es algo antigua y puede ser vulnerable.
 
-![[Pasted image 20250607110814.png]]
+![Code](/img/thedog/dog-5.png)
 
 Vemos que poniendo la version del apache en exploit nos muestra que hay un exploit disponible, el cual se trata de path traversal y RCE.
 
@@ -163,7 +163,7 @@ if __name__ == '__main__':
 
 Lo ejecutamos. 
 
-![[Screenshot 2025-06-08 at 19.34.57.png]]
+![Pwned](/img/thedog/dog-6.png)
 
 y a continuación nos abrimos una netcat para crear una reverse shell que apunte a nuestra maquina y conseguir una mejor conexion con la maquina para que no este tan limitada la shell actual y trabajar mejor.
 
