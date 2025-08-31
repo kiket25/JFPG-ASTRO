@@ -639,34 +639,20 @@ Congratz on rooting this box !
 
 Y ya tendríamos este reto resuelto.
 
-
-
 ## Conclusión
-
-
 
 La explotación de **Dev (VulnHub)** demuestra cómo errores de configuración aparentemente simples pueden comprometer por completo un sistema.  
 
+---
 
-
-**Puntos clave identificados:**
-
+### 🔑 Puntos clave identificados
 - NFS mal configurado permitió la filtración de claves SSH.  
-
 - Archivos de configuración de CMS accesibles.  
-
 - Uso inseguro de `sudo` con binarios vulnerables (`zip`).  
 
+---
 
-
-**Lecciones aprendidas:**
-
+### 📌 Lecciones aprendidas
 - Limitar y segmentar los servicios expuestos en la red.  
-
 - Proteger archivos sensibles y restringir permisos innecesarios.  
-
 - Revisar periódicamente las políticas de `sudo` para evitar escaladas triviales.  
-
-
-
-Este laboratorio fue útil para reforzar técnicas de **enumeración, explotación y escalada de privilegios**, habilidades esenciales en el ámbito del pentesting.
