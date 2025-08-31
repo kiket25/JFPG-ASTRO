@@ -124,7 +124,7 @@ Finished
 ===============================================================
 ```
 
-Aquí ya lo que encontró  usando el puerto 8080 el cual vamos a acceder ahora ya que el anterior tiene que ser algún  tipo de index y este puede ya ser el sitio web bolt
+Aquí ya lo que encontró  usando el puerto 8080 el cual vamos a acceder ahora ya que el anterior tiene que ser algún  tipo de index y este puede ya ser el sitio web bolt.
 
 ![Boltwire1](/img/dev/dev-3.png)
 
@@ -188,6 +188,7 @@ Archive:  save.zip
    skipping: id_rsa                  incorrect password
    skipping: todo.txt                incorrect password
 ```
+
 
 De acuerdo, nos pide contraseña para extraer, asi que como no la sabemos procedemos a usar fuerza bruta, para ello usamos la herramienta **fcrackzip**.
 
@@ -315,13 +316,13 @@ Y ya tendríamos este reto resuelto.
 La explotación de **Dev (VulnHub)** demuestra cómo errores de configuración aparentemente simples pueden comprometer por completo un sistema.  
 
 **Puntos clave identificados:**
-- NFS mal configurado permitió la filtración de claves SSH.  
-- Archivos de configuración de CMS accesibles.  
-- Uso inseguro de `sudo` con binarios vulnerables (`zip`).  
+NFS mal configurado permitió la filtración de claves SSH.  
+Archivos de configuración de CMS accesibles.  
+Uso inseguro de `sudo` con binarios vulnerables (`zip`).  
 
 **Lecciones aprendidas:**
-- Limitar y segmentar los servicios expuestos en la red.  
-- Proteger archivos sensibles y restringir permisos innecesarios.  
-- Revisar periódicamente las políticas de `sudo` para evitar escaladas triviales.  
+Limitar y segmentar los servicios expuestos en la red.  
+Proteger archivos sensibles y restringir permisos innecesarios.  
+Revisar periódicamente las políticas de `sudo` para evitar escaladas triviales.  
 
 Este laboratorio fue útil para reforzar técnicas de **enumeración, explotación y escalada de privilegios**, habilidades esenciales en el ámbito del pentesting.
