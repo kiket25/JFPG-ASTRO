@@ -651,21 +651,21 @@ La explotación de **Dev (VulnHub)** demuestra cómo errores de configuración a
 
 **Puntos clave identificados:**
 
-NFS mal configurado permitió la filtración de claves SSH.  
+- NFS mal configurado permitió la filtración de claves SSH.  
 
-Archivos de configuración de CMS accesibles.  
+- Archivos de configuración de CMS accesibles.  
 
-Uso inseguro de `sudo` con binarios vulnerables (`zip`).  
+- Uso inseguro de `sudo` con binarios vulnerables (`zip`).  
 
 
 
 **Lecciones aprendidas:**
 
-Limitar y segmentar los servicios expuestos en la red.  
+- Limitar y segmentar los servicios expuestos en la red.  
 
-Proteger archivos sensibles y restringir permisos innecesarios.  
+- Proteger archivos sensibles y restringir permisos innecesarios.  
 
-Revisar periódicamente las políticas de `sudo` para evitar escaladas triviales.  
+- Revisar periódicamente las políticas de `sudo` para evitar escaladas triviales.  
 
 
 
