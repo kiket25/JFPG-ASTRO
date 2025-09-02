@@ -649,7 +649,7 @@ La explotación de **Dev (VulnHub)** demuestra cómo errores de configuración a
 
 ✔️ NFS mal configurado permitió la filtración de claves SSH.  
 ✔️ Archivos de configuración de CMS accesibles.  
-✔️ Uso inseguro de `sudo` con binarios vulnerables (`zip`).  
+✔️ Uso inseguro de `sudo` con binarios vulnerables (`zip✔️`).  
 
 ---
 
