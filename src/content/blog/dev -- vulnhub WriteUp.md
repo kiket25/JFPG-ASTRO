@@ -2,7 +2,7 @@
 title: "DEV - VulnHub CTF Writeup"
 description: "CTF maquina dev, una reto que convina tanto exploitacion web a traves de LFI como servicio NFS, filtración de ficheros importantes y mala configuración de servicios"
 pubDate: 2025-08-31
-heroImage: "/img/dev"
+heroImage: "/img/dev.png"
 ---
 
 ### Introducción
