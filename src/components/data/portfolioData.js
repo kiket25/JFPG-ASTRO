@@ -29,9 +29,9 @@ export const portafolioData = [
 	{
 		imgSrc: 'img/stranger.png',
 		title: 'Stranger',
-		skills: ['OSINT', 'Linux', 'Reversing'],
+		skills: ['Web', 'Linux', 'Brute Force', 'Criptografia', 'Misconfigurations', 'SUID'],
 		descripcion:
-			'Reto de ciberseguridad, creado en Docker, centrado en la explotación de vulnerabilidades web a través de técnicas como LFI mediante la subida de archivos. El cual se encuentra publica en la pagian de Dockerlabs.',
+			'Reto de ciberseguridad, creado en Docker, centrado en la explotación de diferentes fallos de seguridad como el de haber documentos importantes en la pagina web, contraseñas inseguras, binarios vulnerables. El cual se encuentra publica en la pagian de Dockerlabs.',
 		demoURL: '',
 		repoURL: '',
 		anim: 'fade-left',
