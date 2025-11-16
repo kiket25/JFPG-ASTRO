@@ -19,10 +19,10 @@ export const portafolioData = [
 	{
 		imgSrc: 'img/picadilly.png',
 		title: 'Picadilly',
-		skills: ['Burp Suite', 'Web Exploitation'],
+		skills: ['Criptografia', 'Web Exploitation', 'LFI', 'SUID'],
 		descripcion:
-			'Reto de ciberseguridad centrado en la explotación de vulnerabilidades web a través de técnicas como SQLi, LFI y bypass de autenticación. Enfocado en análisis con Burp.',
-		demoURL: '',
+			'Reto de ciberseguridad, creado en Docker, centrado en la explotación de vulnerabilidades web a través de técnicas como LFI mediante la subida de archivos. El cual se encuentra publica en la pagian de Dockerlabs.',
+		demoURL: 'https://mega.nz/file/xf8F2DQK#gHSypFAv6z4oM_ltNmfR4myrQHFMSEy8mh2ZvOz5CSg',
 		repoURL: 'https://github.com/kiket25/Write-Ups/blob/main/picadilly-writeup.pdf',
 		anim: 'fade-up',
 	},
@@ -31,7 +31,7 @@ export const portafolioData = [
 		title: 'Stranger',
 		skills: ['OSINT', 'Linux', 'Reversing'],
 		descripcion:
-			'Un reto .',
+			'Reto de ciberseguridad, creado en Docker, centrado en la explotación de vulnerabilidades web a través de técnicas como LFI mediante la subida de archivos. El cual se encuentra publica en la pagian de Dockerlabs.',
 		demoURL: '',
 		repoURL: '',
 		anim: 'fade-left',
@@ -41,7 +41,7 @@ export const portafolioData = [
 		title: 'Paradise',
 		skills: ['OSINT', 'Linux', 'Reversing'],
 		descripcion:
-			'Un reto con enfoque narrativo donde el análisis forense, el reconocimiento pasivo y técnicas de ingeniería inversa se mezclan en una historia misteriosa.',
+			'Reto de ciberseguridad, creado en Docker, centrado en la explotación de vulnerabilidades web a través de técnicas como LFI mediante la subida de archivos. El cual se encuentra publica en la pagian de Dockerlabs.',
 		demoURL: '',
 		repoURL: 'https://github.com/kiket25/Write-Ups/blob/main/Paradise-writeup.pdf',
 		anim: 'fade-left',
@@ -51,7 +51,7 @@ export const portafolioData = [
 		title: 'Devil',
 		skills: ['Privilege Escalation', 'Network Pivoting'],
 		descripcion:
-			'Desafío técnico avanzado que simula una red industrial comprometida. Requiere pivoting, explotación de servicios y escalada hasta acceso root.',
+			'Reto de ciberseguridad, creado en Docker, centrado en la explotación de vulnerabilidades web a través de técnicas como LFI mediante la subida de archivos. El cual se encuentra publica en la pagian de Dockerlabs.',
 		demoURL: '',
 		repoURL: 'https://github.com/kiket25/Write-Ups/blob/main/devil.pdf',
 		anim: 'fade-right',
