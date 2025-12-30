@@ -41,6 +41,6 @@ Pasaremos a visualizar la pagina web.
 Ahora vemos que nos dice Try more basic connection o es decir de probar algo mas simple como puede ser una session netcat. con nuetra ip del servidor apuntando al puerto 5000.
 
 <p align="center">
-  <img src="/img/wargames/wg-4.png" alt="nmap" width="80%">
+  <img src="/img/wargames/wg-5.png" alt="nmap" width="80%">
 </p>
 
