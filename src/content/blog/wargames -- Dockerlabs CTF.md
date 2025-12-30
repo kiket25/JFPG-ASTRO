@@ -41,6 +41,50 @@ Pasaremos a visualizar la pagina web.
 Ahora vemos que nos dice Try more basic connection o es decir de probar algo mas simple como puede ser una session netcat. con nuetra ip del servidor apuntando al puerto 5000.
 
 <p align="center">
-  <img src="/img/wargames/wg-5.png" alt="nmap" width="80%">
+  <img src="/img/wargames/wg-6.png" alt="nmap" width="80%">
 </p>
 
+
+Parece ser que tenemos delante un chatbot el cual es un simular de juegos aunque al ser una chatbot puede tenga una vulnerabilidad de prompt injection.
+
+<p align="center">
+  <img src="/img/wargames/wg-7.png" alt="nmap" width="80%">
+</p>
+
+Al parecer si que se trata de prompt injection y nos delvolvio los creedenciales de ssh para acceder al servidor usando el user joshua. 
+
+Procedemos a decodificar el cifrado el cual se encuentra en sha256
+
+<p align="center">
+  <img src="/img/wargames/wg-8.png" alt="nmap" width="80%">
+</p>
+
+A continuacion probamos de acceder mediante ssh y logramos conexion exitosa.
+
+<p align="center">
+  <img src="/img/wargames/wg-10.png" alt="nmap" width="80%">
+</p>
+
+Buscamos alguna forma de poder escalar privilegios y encotramos un binario con propietario root pero posee permios suid
+
+<p align="center">
+  <img src="/img/wargames/wg-11.png" alt="nmap" width="80%">
+</p>
+
+Pero ejecutando el binario no logramos acceder
+
+<p align="center">
+  <img src="/img/wargames/wg-12.png" alt="nmap" width="80%">
+</p>
+
+ya que si nos traemos el binario a nuestra maquina y lo decopilamos podemos ver que hay que introducir una palabra como opcion del binario para poder acceder al una shell.
+
+<p align="center">
+  <img src="/img/wargames/wg-9.png" alt="nmap" width="80%">
+</p>
+
+Y ahora si despues de descubrir esa clave logramos acceder como root y obtener ganar la partida.
+
+<p align="center">
+  <img src="/img/wargames/wg-13.png" alt="nmap" width="80%">
+</p>
